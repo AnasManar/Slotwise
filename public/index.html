@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <title>Slotwise — The booking desk</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23b84c33'/%3E%3Cpath d='M8 23V8h16v15M15 23V14h9' fill='none' stroke='%23f4f1e9' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#spaces">Skip to booking</a>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="Slotwise home">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M6 29V7h24v22M16 29V16h14"/><path d="M6 29h10M23 29h7"/></svg>
+        slotwise<span class="brand-period">.</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation"><a class="nav-current" href="#spaces">Booking desk</a><a href="#my-reservations">My reservations</a></nav>
+      <div class="workspace-lockup"><span class="workspace-dot"></span><span id="workspace">North Studio</span></div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div><p class="eyebrow">GOOD WORK NEEDS A LITTLE SPACE.</p><h1 id="page-title">The booking <em>desk.</em></h1><p class="intro-copy">A quiet corner. A team catch-up. Your next recording.<br>Find the right room and make it yours for an hour.</p></div>
+        <div class="desk-stamp" aria-hidden="true"><span>SPACE FOR</span><span class="stamp-flower">✳</span><span>GOOD WORK</span></div>
+      </section>
+
+      <div class="utility-bar">
+        <span class="time-zone"><span class="small-cross">+</span> Dubai, UAE <span class="utility-divider">/</span> All times UTC+4</span>
+        <label class="account-label" for="account">Demo account <select id="account"><option value="demo-alice">Alice · North Studio</option><option value="demo-bob">Bob · North Studio</option><option value="demo-carol">Carol · South Studio</option></select></label>
+      </div>
+
+      <div class="layout">
+        <div class="booking-column">
+          <section id="spaces" class="space-section" aria-labelledby="spaces-title">
+            <div class="section-heading"><h2 id="spaces-title"><span class="section-number">01</span> Pick your space</h2><span id="room-count" class="mono"></span></div>
+            <div id="rooms" class="rooms" aria-label="Rooms"></div>
+            <p class="room-footnote">Room sketches are illustrative.</p>
+          </section>
+
+          <section class="booking-panel" aria-labelledby="schedule-title">
+            <div class="section-heading schedule-heading"><h2 id="schedule-title"><span class="section-number">02</span> Find an open hour</h2><label class="date-label" for="date">Date <input id="date" type="date" required></label></div>
+            <div class="schedule-caption"><span id="selected-room-name">Choose a room</span><span class="mono">60 MIN / SESSION</span></div>
+            <div id="slots" class="slots" aria-label="Reservation times"></div>
+            <div class="schedule-legend"><span><i class="legend-open"></i> Open</span><span><i class="legend-unavailable"></i> Unavailable</span><span>09:00 — 18:00</span></div>
+            <div class="reserve-footer"><div><span class="field-label">YOUR SELECTION</span><span id="summary">Choose an hour above</span></div><button id="reserve" class="primary" disabled>Reserve this space <span aria-hidden="true">↗</span></button></div>
+          </section>
+          <div id="notice" class="notice" role="status" aria-live="polite">Alice and Bob share North Studio. Switch to Carol to try a separate workspace.</div>
+        </div>
+
+        <aside class="right-column">
+          <section id="my-reservations" class="reservation-sheet" aria-labelledby="reservation-title">
+            <div class="sheet-topline"><span class="mono">YOUR PERSONAL ROOM REGISTER</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2v5m10-5v5M3 5h14v12H3zM3 9h14"/></svg></div>
+            <div class="section-heading"><h2 id="reservation-title">On your calendar</h2><button id="refresh" class="text-button">Refresh <span aria-hidden="true">↻</span></button></div>
+            <div id="bookings"></div>
+            <p class="sheet-note">Plans change. Cancel a reservation<br>to give someone else the room.</p>
+          </section>
+          <section class="activity-section" aria-labelledby="activity-title"><div class="section-heading"><h2 id="activity-title">The paper trail</h2><span class="mono">LATEST 5</span></div><div id="activity"></div></section>
+          <p class="aside-note">A little consideration goes a long way.<br>Leave the space as you found it.</p>
+        </aside>
+      </div>
+
+      <footer class="page-footer"><span class="footer-brand">slotwise.</span><p>Make room for good work.</p><span class="mono">THE BOOKING DESK <span class="footer-cross">+</span> LOCAL DEMO</span></footer>
+    </main>
+  </div>
+</body>
+</html>
